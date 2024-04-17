@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import { createRoot } from "react-dom/client";
-import { createElement, lazy } from "react";
+import { lazy, createElement } from "react";
 
 onMounted(() => {
   // @ts-ignore
@@ -16,31 +15,36 @@ onMounted(() => {
   document.getElementById("reactRoot")?.appendChild(container);
 });
 </script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <header>
+    <div class="gnb_container">
+      <nav class="gnb">
+        <RouterLink class="link" to="/a">A메뉴</RouterLink>
+        <RouterLink class="link" to="/b">B메뉴</RouterLink>
+      </nav>
+    </div>
+  </header>
+
+  <RouterView />
   <div id="reactRoot"></div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.gnb-container {
+  display: flex;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.gnb {
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+  background-color: black;
+  height: 48px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.link {
+  color: white;
 }
 </style>

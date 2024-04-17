@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "remote-react": "*",
     "@repo/ui": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vue": "^3.4.21"
+    "remote-react": "*",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
